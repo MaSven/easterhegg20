@@ -1,1 +1,11 @@
 #+title: Presentation
+#+author: w1ntermute,splitiii
+#+OPTIONS: reveal_single_file:t toc:nil slideNumber:nil num:nil
+#+REVEAL_INIT_OPTIONS: slideNumber:false
+#+reveal_title_slide: %t </br> %a
+#+REVEAL_THEME: white
+#+reveal_title_slide_background: ./fig/chatkontrolle_title.jpg
+
+
+
+*
