@@ -1,4 +1,4 @@
-#+title: Presentation
+#+title:
 #+author: w1ntermute,splitiii
 #+OPTIONS: reveal_single_file:t toc:nil slideNumber:nil num:nil
 #+REVEAL_INIT_OPTIONS: slideNumber:false
@@ -8,4 +8,66 @@
 
 
 
-*
+* docker build process
+** Layer
+** Cache
+* wie kommen credentials in docker
+** ENV
+** ARGS
+** Hardcoded
+** Die einzige richige methode
+* was sind github pats
+* warum sind die schlecht
+** Alte pats
+** neue pats
+** orga rechte
+* was haben wir gemacht?
+** Die idee des scanners
+** Arbeit aufteilen als team
+** Tools
+** Eigene domain für gemeinsame kommunikation
+* wie war der prozess des disclosures
+** Was ist ein disclosure prozess
+** Validieren der ergebnisse
+** Herausfinden der Rechte
+** Herausfinden der betroffenen Firma
+** Herausfinden disclosure process
+*** Meistens eher irgend eine email adresse finden
+*** Einige haben gezahlt als teil ihres bugbountys
+** Sorgt für eine security.txt
+
+
+* Was waren die erfahrungen
+** Firmen antworten oft einfach nicht
+*** Die die antworten waren immer positiv
+** Es war zu viel für uns. Kontakt mit github selber gesucht.
+** Andere tokens waren einfacher sperren zu lassen beispiel AWS
+** Einige resubmiten den token häufig
+** Es gibt häufingen aus branchen (Crypto,Biotech,AI,Unis)
+** Berater/Freelancer die in vielen orgs sind, schleifen die tokens mit.
+* Fuckups
+** Achte auf eure platte. Dockerhub ist groß
+** Überlegt euch vorher eine Tabellenstruktur. MVP gehen immer in Production
+** APIs mit Pagination ernst nehmen. Die gibt es nicht ohne grund
+** Vergesst nicht eure Steuererklärung zu machen ;P
+
+* was können firmen besser machen?
+** Sorgt für eine security txt
+** Ein ansprechpartner:in reicht
+** Schulen der Mitarbeitenden
+** Offboaridng aus githuborgas
+** PATs müssen ablaufen
+* was sind unsere tipps
+** Sucht euch ein Team. Alleine macht anschreiben keinen Spaß
+** Überlegt euch templates für emails damit ihr gleich kommuniziert
+** Benutzt einen VPN (siehe auch du darfst hacken du musst dich nur nicht erwischen lassen). Hilft auch bei der validierung der IPs
+** Dokumentiert eure zugriffe. (Firmen werden das durch auditlogs verifizieren wollen)
+** Sei bei der kommunikation offen und höflich. Keine Informationen zurückhalten
+** Fang den vortrag nicht eine woche vor vortrag an.
+** Lass dich nicht überreden einen Vortrag zu halten
+** Übrigens das waren nur dockerhub. Das gleiche gilt natürlich für alle archive.
+* schlusswort
+** Viel spaß beim bug bounty
+** Firmen müssen mehr in die Verantwortung gezogen werden.
+*** Dockerhub muss hier besser werden
+*** Firmen müssen ihre
