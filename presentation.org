@@ -4,6 +4,7 @@
 #+REVEAL_INIT_OPTIONS: slideNumber:false
 #+reveal_title_slide: %t </br> %a
 #+REVEAL_THEME: white
+#+REVEAL_PLUGINS: (highlight notes)
 #+reveal_title_slide_background: ./fig/chatkontrolle_title.jpg
 
 
@@ -23,9 +24,9 @@ CMD python /app/app.py
 - Diese werden zur Buildzeit ausgeführt
 - Docker speichert diese mit, um zu zeigen wie ein image gebaut wird.
 #+reveal: split
-#+REVEAL_MARGIN: 0.5
-#+caption: Beispiel von Docker layern auf der Website
-+name: fig:docke-1
+#+CAPTION: Beispiel von Docker layern auf der Website
+#+name: fig:docke-1
+#+ATTR_HTML: :style height:65vh
 [[./fig/docker_layer_example.png]]
 
 * wie kommen credentials in docker :w1ntermute:
@@ -39,11 +40,28 @@ ENV SUPER_SECURE_TOKEN="totally_not_visable_anywhere"
 ** ARGS
 ** Hardcoded
 ** Die einzige richige methode
-* was sind github pats :splitiii:
+* Was sind GitHub Personal Access Tokens (PATs) :splitiii:
+#+Reveal: split
+- Eine Art von Authentifizierungscode für den Zugriff auf GitHub-Ressourcen ohne Anmeldeinformationen.
+- GitHub Personal Access Tokens ermöglichen den Zugriff auf die eigenen GitHub-Ressourcen. Man benutzt sie zB bei Automatisierung von Skripten.
 * warum sind die schlecht :splitiii:
-** Alte pats
+** Alte pats (classic)
+#+Reveal: split
+#+begin_notes
+- Ohne Ablaufdatum erstellt werden können, was das Risiko einer unbeabsichtigten Nutzung erhöht.
+- Nicht auf einzelne Repositorys beschränkt werden können, was ein höheres Sicherheitsrisiko darstellt.
+- Eine ungenauere Kontrolle über Berechtigungen und Zugriffsrechte bieten, da sie allgemein weniger granular einstellbar sind.
+#+end_notes
+#+CAPTION: GitHub Personal Access Tokens, wie sie üblicherweise verwendet werden
+#+name: fig:pat-overview-1
+[[./fig/pat_classic_overview.jpg]]
+#+Reveal: split
+#+CAPTION: GitHub Personal Access Tokens, Möglichkeiten der Einstellung
+#+name: fig:pat-options
+#+ATTR_HTML: :style height:65vh
+[[./fig/pat_classic_options.jpg]]
+
 ** neue pats
-** orga rechte
 * was haben wir gemacht? :splitiii:
 ** Die idee des scanners
 ** Arbeit aufteilen als team
