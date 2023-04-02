@@ -10,7 +10,7 @@
 
 * docker build process
 ** Layer
-#+begin_src Dockerfile
+#+begin_src dockerfile
 # syntax=docker/dockerfile:1
 FROM ubuntu:18.04
 COPY . /app
@@ -30,7 +30,13 @@ CMD python /app/app.py
 
 * wie kommen credentials in docker
 ** ENV
+#+begin_src dockerfile :exports both :results value
+FROM phusion/baseimage:jammy-1.0.1
+ENV SUPER_SECURE_TOKEN="totally_not_visable_anywhere"
+#+end_src
 
+#+RESULTS:
+: #<window 59 on /tmp/babel-7Ocugv/ob-docker-build-out-rLWR2Z>
 ** ARGS
 ** Hardcoded
 ** Die einzige richige methode
