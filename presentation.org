@@ -8,7 +8,7 @@
 
 
 
-* docker build process
+* docker build process :w1ntermute:
 ** Layer
 #+begin_src dockerfile
 # syntax=docker/dockerfile:1
@@ -25,10 +25,10 @@ CMD python /app/app.py
 #+reveal: split
 #+REVEAL_MARGIN: 0.5
 #+caption: Beispiel von Docker layern auf der Website
-#+name: fig:docke-1
++name: fig:docke-1
 [[./fig/docker_layer_example.png]]
 
-* wie kommen credentials in docker
+* wie kommen credentials in docker :w1ntermute:
 ** ENV
 #+begin_src dockerfile :exports both :results value
 FROM phusion/baseimage:jammy-1.0.1
@@ -36,20 +36,20 @@ ENV SUPER_SECURE_TOKEN="totally_not_visable_anywhere"
 #+end_src
 
 #+RESULTS:
-: #<window 59 on /tmp/babel-7Ocugv/ob-docker-build-out-rLWR2Z>
 ** ARGS
 ** Hardcoded
 ** Die einzige richige methode
-* was sind github pats
-* warum sind die schlecht
+* was sind github pats :splitiii:
+* warum sind die schlecht :splitiii:
 ** Alte pats
 ** neue pats
 ** orga rechte
-* was haben wir gemacht?
+* was haben wir gemacht? :splitiii:
 ** Die idee des scanners
 ** Arbeit aufteilen als team
 ** Tools
 ** Eigene domain für gemeinsame kommunikation
+** Statistiken :w1ntermute:
 * wie war der prozess des disclosures
 ** Was ist ein disclosure prozess
 ** Validieren der ergebnisse
@@ -60,7 +60,9 @@ ENV SUPER_SECURE_TOKEN="totally_not_visable_anywhere"
 *** Einige haben gezahlt als teil ihres bugbountys
 ** Sorgt für eine security.txt
 
-
+#+begin_notes
+Ab hier macht oben splitiii und unten w1ntermute
+#+end_notes
 * Was waren die erfahrungen
 ** Firmen antworten oft einfach nicht
 *** Die die antworten waren immer positiv
