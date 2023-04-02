@@ -10,9 +10,27 @@
 
 * docker build process
 ** Layer
-** Cache
+#+begin_src Dockerfile
+# syntax=docker/dockerfile:1
+FROM ubuntu:18.04
+COPY . /app
+RUN make /app
+CMD python /app/app.py
+#+end_src
+#+Reveal: split
+- Jede zeile ist ein neuer Layer.
+- Docker mergt diese Layer, um das fertige image zu erstellen
+- Diese werden zur Buildzeit ausgeführt
+- Docker speichert diese mit, um zu zeigen wie ein image gebaut wird.
+#+reveal: split
+#+REVEAL_MARGIN: 0.5
+#+caption: Beispiel von Docker layern auf der Website
+#+name: fig:docke-1
+[[./fig/docker_layer_example.png]]
+
 * wie kommen credentials in docker
 ** ENV
+
 ** ARGS
 ** Hardcoded
 ** Die einzige richige methode
