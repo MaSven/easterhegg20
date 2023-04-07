@@ -40,11 +40,28 @@ ENV SUPER_SECURE_TOKEN="totally_not_visable_anywhere"
 ** ARGS
 ** Hardcoded
 ** Die einzige richige methode
-* Was sind GitHub Personal Access Tokens (PATs) :splitiii:
+
+
+* Was sind GitHub Personal Access Tokens (PATs)
+#+begin_notes
+--- Sergej ---
+#+end_notes
 #+Reveal: split
+#+begin_notes
+--- Sergej ---
 - Eine Art von Authentifizierungscode für den Zugriff auf GitHub-Ressourcen ohne Anmeldeinformationen.
 - GitHub Personal Access Tokens ermöglichen den Zugriff auf die eigenen GitHub-Ressourcen. Man benutzt sie zB bei Automatisierung von Skripten.
-* warum sind die schlecht :splitiii:
+#+end_notes
+- Authentifizier für Zugriff auf GitHub-Ressourcen
+- Häufige verwendung bei Automatisierung
+- Classic: ghp_[0-9a-zA-Z]{36}
+- Fine-grained: github_pat_[0-9a-zA-Z_]{82}
+#+ATTR_HTML: :style height:35vh
+[[./fig/regex_meme.webp]]
+* Welche arten von PATs gibt es?
+#+begin_notes
+--- Sergej ---
+#+end_notes
 ** Alte pats (classic)
 #+Reveal: split
 #+begin_notes
@@ -58,15 +75,70 @@ ENV SUPER_SECURE_TOKEN="totally_not_visable_anywhere"
 #+Reveal: split
 #+CAPTION: GitHub Personal Access Tokens, Möglichkeiten der Einstellung
 #+name: fig:pat-options
-#+ATTR_HTML: :style height:65vh
+#+ATTR_HTML: :style height:60vh
 [[./fig/pat_classic_options.jpg]]
 
-** neue pats
-* was haben wir gemacht? :splitiii:
+** Was machen die neuen besser?
+[[./fig/new_is_better.gif]]
+#+begin_notes
+--- Sergej ---
+Neu ist immer besssr :) Trifft hier auch zu.
+#+end_notes
+#+begin_notes
+--- Sergej ---
+- Höhere Granularität: Mit den fine grained Token kann man sagen auf welche Repos man den Zugriff gewährt.
+- Flexible Zugriffssteuerung: Mit den Token kann man Zugriffsrechte dann nochmal viel granularer steuern.
+Hat der Token Keinen / Lesenden oder auch schreibenden Zugriff auf zB: Secrets, Issues, Actions, Content, ...
+- Im Gegensatz zu den klassischen Personal Access Tokens bieten Fine-grained Tokens Organisationen und Enterprises mehr Kontrolle. Admins können jedem Token das Recht auf ihre Repos wiederrufen.
+#+end_notes
+#+Reveal: split
+- Höhere Granularität
+- Flexible Zugriffssteuerung
+- bessere Steuerung für Orgs und Enterprises
+* was haben wir gemacht?
+#+begin_notes
+--- Sergej ---
+#+end_notes
 ** Die idee des scanners
+- Ich scanne "einfach" mal Dockerhub
+- API Endpunkte erschweren das Scannen
+- Ratelimit muss eingehalten werden.
+#+ATTR_HTML: :style height:40vh
+[[./fig/just_do_it.gif]]
+#+begin_notes
+--- Sergej ---
+Warum Dockerhub:
+- Naja das ist die erste Seite die mir eingefallen ist die ich selber mal benutzt habe um Images zu publishen.
+- Wusste bereits das man da auch die Layer daten bekommt.
+- Ist nach eigenen Aussagen die größte Bibliothek für Container-Images
+- Hat ein free tier also nutzen das auch viele Leute.
+API Endpunkte erschweren das Scannen:
+- Es gibt keinen API Enpunkt bei dem man über alle Repos itterieren kann.
+- Was aber geht ist eine Suche bei der man einen QRY hinschickt und dann Paginierte Repos zurückbekommt.
+- Lösung war nun Random Strings und Einträge aus einer Wordlist gegen die API zu schmeißen.
+Ratelimit:
+- Hat mich echt geärgert. Weil ich da immer wieder reingelaufen bin obwohl ich laut meinen Metriken nicht drüber war.
+- Später Festgestellt das man Authentifiziert mehr Requests schicken kann.
+- Einen Server zu haben auf dem das im Hintergrund läuft ist schon ganz gut.
+#+end_notes
 ** Arbeit aufteilen als team
+- Mehr Secrets als gedacht
+- Hol dir Leute, denen du vertraust
+#+begin_notes
+Mehr Secrets als gedacht:
+- es sind täglich neue dazu gekommen.
+- neben der Arbeit zu wenig Zeit um sich darum zu kümmern
+- mehr aufwand als erwartet pro finding
+Hol dir Leute, denen du vertraust:
+- Relativ früh dazu entschieden zwei personen zu Involvieren.
+- Früh einen Prozess etabliert wie wir uns Aufteilen.
+#+end_notes
 ** Tools
+- SQL Datenbank mit den Scan Results
+- Dokumente hinterlegt bei cryptpad (digitalcourage)
 ** Eigene domain für gemeinsame kommunikation
+- Name ist Programm -> Brokentoken
+- One Face to the Customer
 ** Statistiken :w1ntermute:
 * wie war der prozess des disclosures
 ** Was ist ein disclosure prozess
