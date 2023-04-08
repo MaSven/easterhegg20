@@ -202,14 +202,11 @@ Admin / Write / Read ....
 Read rechte auf ein Public Repo hat keinen Impact. Admin auf einem internen oder privatem Repo aber schon.
 Read auf Private Repos kann auch von Interesse sein. 
 #+end_notes
-** Herausfinden der betroffenen Firma
-- URL bei der Org hinterleg
-- Hoffentlich ist der Name nicht zu generisch
-- Reverse Bildersuche
-** Herausfinden disclosure process
+** Herausfinden der betroffenen Firma :w1ntermute:
+** Herausfinden disclosure process :w1ntermute:
 *** Meistens eher irgend eine email adresse finden
 *** Einige haben gezahlt als teil ihres bugbountys
-** Sorgt für eine security.txt
+** Sorgt für eine security.txt :w1ntermute:
 #+begin_notes
 Ab hier macht oben splitiii und unten w1ntermute
 #+end_notes
@@ -217,7 +214,7 @@ Ab hier macht oben splitiii und unten w1ntermute
 ** Firmen antworten oft einfach nicht
 *** Die die antworten waren immer positiv
 ** Es war zu viel für uns. Kontakt mit github selber gesucht.
-** Andere tokens waren einfacher sperren zu lassen beispiel AWS
+** Andere tokens waren einfacher sperren zu lassen beispiel AWS (in der Theorie)
 ** Einige resubmiten den token häufig
 ** Es gibt häufingen aus branchen (Crypto,Biotech,AI,Unis)
 ** Berater/Freelancer die in vielen orgs sind, schleifen die tokens mit.
