@@ -112,7 +112,7 @@ Ratelimit:
 - Einen Server zu haben auf dem das im Hintergrund läuft ist schon ganz gut.
 #+end_notes
 - Ich scanne "einfach" mal Dockerhub
-- Scannen nach Credentials
+- Die Suche nach den Secrets
 #+ATTR_HTML: :style height:40vh
 [[./fig/just_do_it.gif]]
 #+Reveal: split
@@ -180,14 +180,36 @@ Jeder sollte der Kommunikation folgen können.
 ** Statistiken :w1ntermute:
 * wie war der prozess des disclosures
 ** Was ist ein disclosure prozess
+- Responsible: Erst dem Hersteller, dann der Welt
+- Full: Erst der Welt, dann dem Hersteller
+- None: Niemandem
 ** Validieren der ergebnisse
+- Bau dir Tooling
+- Automatisierung ist dein Freund
+- Grafisch aufbereitet macht es einfacher
 ** Herausfinden der Rechte
+[[./fig/token_enum_1.jpg]]
+#+Reveal: split
+#+begin_notes
+Erstmal gucken auf welche Orgs der Token Zugriff hat.
+#+end_notes
+[[./fig/token_enum_filter.jpg]]
+#+Reveal: split
+[[./fig/token_enum_2.jpg]]
+#+begin_notes
+Dann enumerieren was für Rechte man so bei den Repos hat. 
+Admin / Write / Read ....
+Read rechte auf ein Public Repo hat keinen Impact. Admin auf einem internen oder privatem Repo aber schon.
+Read auf Private Repos kann auch von Interesse sein. 
+#+end_notes
 ** Herausfinden der betroffenen Firma
+- URL bei der Org hinterleg
+- Hoffentlich ist der Name nicht zu generisch
+- Reverse Bildersuche
 ** Herausfinden disclosure process
 *** Meistens eher irgend eine email adresse finden
 *** Einige haben gezahlt als teil ihres bugbountys
 ** Sorgt für eine security.txt
-
 #+begin_notes
 Ab hier macht oben splitiii und unten w1ntermute
 #+end_notes
