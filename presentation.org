@@ -42,47 +42,43 @@ ENV SUPER_SECURE_TOKEN="totally_not_visable_anywhere"
 ** Die einzige richige methode
 
 
-* Was sind GitHub Personal Access Tokens (PATs)
-#+begin_notes
---- Sergej ---
-#+end_notes
+* Was sind GitHub Personal Access Token (PATs)
 #+Reveal: split
 #+begin_notes
 --- Sergej ---
 - Eine Art von Authentifizierungscode für den Zugriff auf GitHub-Ressourcen ohne Anmeldeinformationen.
 - GitHub Personal Access Tokens ermöglichen den Zugriff auf die eigenen GitHub-Ressourcen. Man benutzt sie zB bei Automatisierung von Skripten.
 #+end_notes
-- Authentifizier für Zugriff auf GitHub-Ressourcen
-- Häufige verwendung bei Automatisierung
-- Classic: ghp_[0-9a-zA-Z]{36}
-- Fine-grained: github_pat_[0-9a-zA-Z_]{82}
-#+ATTR_HTML: :style height:35vh
-[[./fig/regex_meme.webp]]
-* Welche arten von PATs gibt es?
+- Alternative zu einem Passwort
+- Können ein Ablaufdatum haben
+- Automatisierung
+* Was für Pats gibt es
 #+begin_notes
 --- Sergej ---
 #+end_notes
-** Alte pats (classic)
-#+Reveal: split
+** Alte Token (classic)
 #+begin_notes
-- Ohne Ablaufdatum erstellt werden können, was das Risiko einer unbeabsichtigten Nutzung erhöht.
-- Nicht auf einzelne Repositorys beschränkt werden können, was ein höheres Sicherheitsrisiko darstellt.
-- Eine ungenauere Kontrolle über Berechtigungen und Zugriffsrechte bieten, da sie allgemein weniger granular einstellbar sind.
+- Werden zu häufig ohne Ablaufdatum erstellt, was das Risiko einer unbeabsichtigten Nutzung erhöht.
+- Können nicht auf einzelne Repositorys beschränkt werden können, was ein höheres Sicherheitsrisiko darstellt.
+Wenn sie abhanden kommen.
 #+end_notes
-#+CAPTION: GitHub Personal Access Tokens, wie sie üblicherweise verwendet werden
-#+name: fig:pat-overview-1
+- Haben meistens zu hohe Rechte
+- Werden häufig ohne Ablaufdatum erstellt
+#+ATTR_HTML: :style height:30vh
 [[./fig/pat_classic_overview.jpg]]
 #+Reveal: split
-#+CAPTION: GitHub Personal Access Tokens, Möglichkeiten der Einstellung
-#+name: fig:pat-options
+#+begin_notes
+- Eine ungenauere Kontrolle über Berechtigungen und Zugriffsrechte bieten, da sie allgemein weniger granular einstellbar sind.
+#+end_notes
+- Begrenzte Granularität bei Rechtevergabe 
 #+ATTR_HTML: :style height:60vh
 [[./fig/pat_classic_options.jpg]]
 
-** Was machen die neuen besser?
+** Fine-grained Token
 [[./fig/new_is_better.gif]]
 #+begin_notes
 --- Sergej ---
-Neu ist immer besssr :) Trifft hier auch zu.
+Neu ist immer besser :) Trifft hier auch zu.
 #+end_notes
 #+begin_notes
 --- Sergej ---
@@ -95,16 +91,10 @@ Hat der Token Keinen / Lesenden oder auch schreibenden Zugriff auf zB: Secrets, 
 - Höhere Granularität
 - Flexible Zugriffssteuerung
 - bessere Steuerung für Orgs und Enterprises
-* was haben wir gemacht?
-#+begin_notes
---- Sergej ---
-#+end_notes
+#+Reveal: split
+[[./fig/create_fine_grained.gif]]
+* Was haben wir gemacht?
 ** Die idee des scanners
-- Ich scanne "einfach" mal Dockerhub
-- API Endpunkte erschweren das Scannen
-- Ratelimit muss eingehalten werden.
-#+ATTR_HTML: :style height:40vh
-[[./fig/just_do_it.gif]]
 #+begin_notes
 --- Sergej ---
 Warum Dockerhub:
@@ -121,6 +111,37 @@ Ratelimit:
 - Später Festgestellt das man Authentifiziert mehr Requests schicken kann.
 - Einen Server zu haben auf dem das im Hintergrund läuft ist schon ganz gut.
 #+end_notes
+- Ich scanne "einfach" mal Dockerhub
+- Scannen nach Credentials
+#+ATTR_HTML: :style height:40vh
+[[./fig/just_do_it.gif]]
+#+Reveal: split
+#+NAME: <name>
+#+BEGIN_SRC python
+class SecretScanner(object):
+    def __init__(self,rules_file):
+        self._rules = self._load_rules(rules_file)
+
+    def scan(self, string):
+        for rule in self._rules:
+            match = re.compile(rule["regex"]).search(string)
+            if match:
+                yield {"type": rule["id"], "secret": match.group(0)}
+
+    def _load_rules(self, rules_file):
+        with open(rules_file, 'r') as json_file:
+            rules =  json.load(json_file)["rules"]
+            return rules
+#+END_SRC
+#+Reveal: split
+#+BEGIN_SRC json
+{
+    "id": "github-pat",
+    "regex": "ghp_[0-9a-zA-Z]{36}"
+}
+#+END_SRC
+#+ATTR_HTML: :style height:35vh
+[[./fig/regex_meme.webp]]
 ** Arbeit aufteilen als team
 - Mehr Secrets als gedacht
 - Hol dir Leute, denen du vertraust
@@ -135,10 +156,27 @@ Hol dir Leute, denen du vertraust:
 #+end_notes
 ** Tools
 - SQL Datenbank mit den Scan Results
-- Dokumente hinterlegt bei cryptpad (digitalcourage)
+- Dokumente hinterlegt bei cryptpad
+#+begin_notes
+- Datenbank:
+Hier haben wir sowohl die Namen der Images und deren Tags gespeichert
+Anfangs auch die Layer zu allen Tags, hat den Speicherplatz aufgebraucht. Später nur noch wenn Secrets gefunden wurden.
+Status ob die Credentials valide sind und bereits bearbeitet wurden.
+- Cryptpad:
+Standart Nachricht für die erste Kontaktaufnahme.
+Welche Unternehmen bereits Angeschrieben wurden (Ja es gab teilweise mehrere Token zu einer Org)
+Kontaktpersonen / Zuständiger für eine Org
+#+end_notes
 ** Eigene domain für gemeinsame kommunikation
 - Name ist Programm -> Brokentoken
 - One Face to the Customer
+#+ATTR_HTML: :style height:40vh
+[[./fig/brokentoken.png]]
+#+begin_notes
+Haben uns einen Namen ausgesucht der zu dem Thema pass was wir Reporten wollen.
+Wollten nicht als Gruppe auftreten sondern als einzelne Person.
+Jeder sollte der Kommunikation folgen können.
+#+end_notes
 ** Statistiken :w1ntermute:
 * wie war der prozess des disclosures
 ** Was ist ein disclosure prozess
