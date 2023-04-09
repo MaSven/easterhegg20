@@ -38,10 +38,28 @@ ENV SUPER_SECURE_TOKEN="totally_not_visable_anywhere"
 
 #+RESULTS:
 ** ARGS
+#+begin_src dockerfile :exports both :results value
+FROM busybox
+ARG MORE_SECURE_TOKEN
+#+end_src
 ** Hardcoded
+#+begin_src dockerfile :exports both :results value
+FROM busybox
+RUN export I_KNOW_THIS_IS_NOT_SECURE="JUST_FOR_TESTING_REALLY"
+#+end_src
 ** Die einzige richige methode
-
-
+#+begin_src dockerfile :exports both :results value
+FROM python:3
+RUN pip install awscli
+RUN --mount=type=secret,id=aws,target=/root/.aws/credentials \
+  aws s3 cp s3://... ...
+#+end_src
+#+reveal: split
+- Oder noch besser zur laufzeit holen im über eigenen code.
+- Probiert hier mal OWASP/wrongsecrets
+#+begin_notes
+OWASP/Wrongsecrets als schulung erwähnen.
+#+end_notes
 * Was sind GitHub Personal Access Token (PATs)
 #+Reveal: split
 #+begin_notes
