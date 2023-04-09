@@ -197,7 +197,8 @@ Haben uns einen Namen ausgesucht der zu dem Thema pass was wir Reporten wollen.
 Wollten nicht als Gruppe auftreten sondern als einzelne Person.
 Jeder sollte der Kommunikation folgen können.
 #+end_notes
-** Statistiken :w1ntermute:
+** Statistiken
+[[./fig/permissions_overview.png]]
 * wie war der prozess des disclosures
 ** Was ist ein disclosure prozess
 - Responsible: Erst dem Hersteller, dann der Welt
