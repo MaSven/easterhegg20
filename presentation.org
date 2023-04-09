@@ -199,6 +199,8 @@ Jeder sollte der Kommunikation folgen können.
 #+end_notes
 ** Statistiken
 [[./fig/permissions_overview.png]]
+#+revelal: split
+Ganze 859 Organisationen lieben anscheinend opensource ;P
 * wie war der prozess des disclosures
 ** Was ist ein disclosure prozess
 - Responsible: Erst dem Hersteller, dann der Welt
@@ -223,11 +225,28 @@ Admin / Write / Read ....
 Read rechte auf ein Public Repo hat keinen Impact. Admin auf einem internen oder privatem Repo aber schon.
 Read auf Private Repos kann auch von Interesse sein. 
 #+end_notes
-** Herausfinden der betroffenen Firma :w1ntermute:
-** Herausfinden disclosure process :w1ntermute:
-*** Meistens eher irgend eine email adresse finden
-*** Einige haben gezahlt als teil ihres bugbountys
-** Sorgt für eine security.txt :w1ntermute:
+** Herausfinden der betroffenen Firma
+- Schaue nach Metainformationen auf Github
+- E-Mails von Committern (oft leider einfach gmail.com)
+#+reveal: split
+- Das internet
+  [[./fig/sucher_nach_firma_im_netz.jpg]]
+** Herausfinden disclosure process
+- Meistens eher irgend eine email adresse finden
+  info@ sales@ admin@ hostmaster@ webmaster@ privacy@ security@ etc.
+- Einige haben gezahlt als teil ihres bugbountys
+- Nur sehr wenige (2) hatten eine security.txt
+- Einige nutzen iFrames um Bugbountyprogramme einzubinden würg
+** Sorgt für eine security.txt
+- securitytxt.org
+- Draft RFC seit  2017
+- Proposed seit 2022
+#+reveal: split
+Beispiel:
+#+begin_quote
+Contact: mailto:security@brokentoken.de
+Expires: 2023-04-10T14:00:00.000Z
+#+end_quote
 #+begin_notes
 Ab hier macht oben splitiii und unten w1ntermute
 #+end_notes
