@@ -102,9 +102,6 @@ Hat der Token Keinen / Lesenden oder auch schreibenden Zugriff auf zB: Secrets, 
 - Höhere Granularität
 - Flexible Zugriffssteuerung
 - bessere Steuerung für Orgs und Enterprises
-#+Reveal: split
-
-#+REVEAL_TOC_SLIDE_BACKGROUND: ./fig/create_fine_grained.gif
 * Was haben wir gemacht?
 ** Die idee des scanners
 #+begin_notes
