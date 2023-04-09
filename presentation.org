@@ -284,6 +284,29 @@ w1ntermute
 * was sind unsere tipps
 ** Sucht euch ein Team. Alleine macht anschreiben keinen Spaß
 ** Überlegt euch templates für emails damit ihr gleich kommuniziert
+#+begin_src txt
+Security vulnerability discovered
+
+​
+
+Hello,
+
+I am writing to report a security vulnerability that I have become aware of within your company. As a security researcher, it is my responsibility to bring such issues to the attention of the appropriate parties so that they can be addressed and resolved.
+
+I am unable to find the appropriate contact person on the company's website to report this issue to, so I am reaching out via email. I would like to recommend the creation of a security.txt file in the well-known folder to make it easier for researchers to report vulnerabilities in the future.
+
+Furthermore, I have discovered that it is possible for me to access internal GitHub repositories. I have attached an image with a small excerpt as evidence. If the company has a bug bounty program, I would be grateful to receive a corresponding bounty for my efforts in identifying and reporting this issue.
+
+<picture overview repos>
+
+I am available to communicate over email or through any other medium that the company prefers. Please reach out to me the best way to proceed.
+
+Thank you in advance for your prompt attention to this matter.
+
+Sincerely,
+​​BrokenToken
+​
+#+end_src
 ** Benutzt einen VPN (siehe auch du darfst hacken du musst dich nur nicht erwischen lassen). Hilft auch bei der validierung der IPs
 ** Dokumentiert eure zugriffe. (Firmen werden das durch auditlogs verifizieren wollen)
 ** Sei bei der kommunikation offen und höflich. Keine Informationen zurückhalten
