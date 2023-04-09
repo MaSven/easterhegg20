@@ -189,15 +189,24 @@ Haben uns einen Namen ausgesucht der zu dem Thema pass was wir Reporten wollen.
 Wollten nicht als Gruppe auftreten sondern als einzelne Person.
 Jeder sollte der Kommunikation folgen können.
 #+end_notes
-** Statistiken
+* Statistiken
+** Permissions
 [[./fig/permissions_overview.png]]
 #+reveal: split
+** Orgas
 Ganze 859 Organisationen lieben anscheinend opensource ;P
+** Firmen
+Angeschrieben 57
+** Rückmeldungen
+Insgesamt 8 interessiern sich für security
 * wie war der prozess des disclosures
 ** Was ist ein disclosure prozess
 - Responsible: Erst dem Hersteller, dann der Welt
 - Full: Erst der Welt, dann dem Hersteller
 - None: Niemandem
+
+
+
 ** Validieren der ergebnisse
 - Bau dir Tooling
 - Automatisierung ist dein Freund
