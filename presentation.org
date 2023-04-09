@@ -233,6 +233,9 @@ Read auf Private Repos kann auch von Interesse sein.
 - Das internet
 #+reveal: split
   [[./fig/sucher_nach_firma_im_netz.jpg]]
+  #+begin_notes
+  Hier darauf eingehen, dass man nicht der falschen firma das finding meldet.
+  #+end_notes
 ** Herausfinden disclosure process
 - Meistens eher irgend eine email adresse finden
   info@ sales@ admin@ hostmaster@ webmaster@ privacy@ security@ etc.
