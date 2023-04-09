@@ -28,6 +28,9 @@ CMD python /app/app.py
 #+name: fig:docke-1
 #+ATTR_HTML: :style height:65vh
 [[./fig/docker_layer_example.png]]
+#begin_notes
+w1ntermute
+#+end_notes
 
 * wie kommen credentials in docker
 ** ENV
