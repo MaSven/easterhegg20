@@ -247,8 +247,14 @@ Ab hier macht oben splitiii und unten w1ntermute
 ** Es war zu viel für uns. Kontakt mit github selber gesucht.
 ** Andere tokens waren einfacher sperren zu lassen beispiel AWS (in der Theorie)
 ** Einige resubmiten den token häufig
-** Es gibt häufingen aus branchen (Crypto,Biotech,AI,Unis)
+** Es gibt häufungen aus branchen (Crypto,Biotech,AI,Unis)
+#+begin_notes
+w1ntermute
+#+end_notes
 ** Berater/Freelancer die in vielen orgs sind, schleifen die tokens mit.
+#+begin_notes
+w1ntermute
+#+end_notes
 * Fuckups
 ** Achte auf eure platte. Dockerhub ist groß
 ** Überlegt euch vorher eine Tabellenstruktur. MVP gehen immer in Production
