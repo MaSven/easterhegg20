@@ -282,5 +282,9 @@ Ab hier macht oben splitiii und unten w1ntermute
 * schlusswort
 ** Viel spaß beim bug bounty
 ** Firmen müssen mehr in die Verantwortung gezogen werden.
-*** Dockerhub muss hier besser werden
-*** Firmen müssen ihre
+- Dockerhub muss hier besser werden
+- Firmen müssen ihre Entwickler:innen besser Schulen
+- Schreibt keine Blogs mit falschem credentials händling
+#+begin_notes
+Die ganzen LLMs veteilen dieses falsche wissen.
+#+end_notes
