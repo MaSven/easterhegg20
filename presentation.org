@@ -9,7 +9,7 @@
 
 
 
-* docker build process :w1ntermute:
+* docker build process
 ** Layer
 #+begin_src dockerfile
 # syntax=docker/dockerfile:1
@@ -29,7 +29,7 @@ CMD python /app/app.py
 #+ATTR_HTML: :style height:65vh
 [[./fig/docker_layer_example.png]]
 
-* wie kommen credentials in docker :w1ntermute:
+* wie kommen credentials in docker
 ** ENV
 #+begin_src dockerfile :exports both :results value
 FROM phusion/baseimage:jammy-1.0.1
