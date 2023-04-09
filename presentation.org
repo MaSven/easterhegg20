@@ -48,6 +48,7 @@ FROM busybox
 RUN export I_KNOW_THIS_IS_NOT_SECURE="JUST_FOR_TESTING_REALLY"
 #+end_src
 ** Die einzige richige methode
+<<<<<<< Updated upstream
 #+begin_src dockerfile :exports both :results value
 FROM python:3
 RUN pip install awscli
@@ -60,20 +61,19 @@ RUN --mount=type=secret,id=aws,target=/root/.aws/credentials \
 #+begin_notes
 OWASP/Wrongsecrets als schulung erwähnen.
 #+end_notes
+=======
+
+>>>>>>> Stashed changes
 * Was sind GitHub Personal Access Token (PATs)
 #+Reveal: split
 #+begin_notes
---- Sergej ---
 - Eine Art von Authentifizierungscode für den Zugriff auf GitHub-Ressourcen ohne Anmeldeinformationen.
 - GitHub Personal Access Tokens ermöglichen den Zugriff auf die eigenen GitHub-Ressourcen. Man benutzt sie zB bei Automatisierung von Skripten.
 #+end_notes
 - Alternative zu einem Passwort
 - Können ein Ablaufdatum haben
-- Automatisierung
+- Häufig für Automatisierung verwendet
 * Was für Pats gibt es
-#+begin_notes
---- Sergej ---
-#+end_notes
 ** Alte Token (classic)
 #+begin_notes
 - Werden zu häufig ohne Ablaufdatum erstellt, was das Risiko einer unbeabsichtigten Nutzung erhöht.
@@ -91,15 +91,12 @@ Wenn sie abhanden kommen.
 - Begrenzte Granularität bei Rechtevergabe 
 #+ATTR_HTML: :style height:60vh
 [[./fig/pat_classic_options.jpg]]
-
 ** Fine-grained Token
 [[./fig/new_is_better.gif]]
 #+begin_notes
---- Sergej ---
 Neu ist immer besser :) Trifft hier auch zu.
 #+end_notes
 #+begin_notes
---- Sergej ---
 - Höhere Granularität: Mit den fine grained Token kann man sagen auf welche Repos man den Zugriff gewährt.
 - Flexible Zugriffssteuerung: Mit den Token kann man Zugriffsrechte dann nochmal viel granularer steuern.
 Hat der Token Keinen / Lesenden oder auch schreibenden Zugriff auf zB: Secrets, Issues, Actions, Content, ...
@@ -110,11 +107,11 @@ Hat der Token Keinen / Lesenden oder auch schreibenden Zugriff auf zB: Secrets, 
 - Flexible Zugriffssteuerung
 - bessere Steuerung für Orgs und Enterprises
 #+Reveal: split
-[[./fig/create_fine_grained.gif]]
+
+#+REVEAL_TOC_SLIDE_BACKGROUND: ./fig/create_fine_grained.gif
 * Was haben wir gemacht?
 ** Die idee des scanners
 #+begin_notes
---- Sergej ---
 Warum Dockerhub:
 - Naja das ist die erste Seite die mir eingefallen ist die ich selber mal benutzt habe um Images zu publishen.
 - Wusste bereits das man da auch die Layer daten bekommt.
@@ -129,7 +126,7 @@ Ratelimit:
 - Später Festgestellt das man Authentifiziert mehr Requests schicken kann.
 - Einen Server zu haben auf dem das im Hintergrund läuft ist schon ganz gut.
 #+end_notes
-- Ich scanne "einfach" mal Dockerhub
+- "Einfach" mal Dockerhub scannen
 - Die Suche nach den Secrets
 #+ATTR_HTML: :style height:40vh
 [[./fig/just_do_it.gif]]
