@@ -274,7 +274,7 @@ w1ntermute
 ** Dokumentiert eure zugriffe. (Firmen werden das durch auditlogs verifizieren wollen)
 ** Sei bei der kommunikation offen und höflich. Keine Informationen zurückhalten
 ** Fang den vortrag nicht eine woche vor vortrag an.
-** Lass dich nicht überreden einen Vortrag zu halten
+** Lass dich überreden einen Vortrag zu halten
 ** Übrigens das waren nur dockerhub. Das gleiche gilt natürlich für alle archive.
 * schlusswort
 ** Viel spaß beim bug bounty
