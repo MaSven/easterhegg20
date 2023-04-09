@@ -196,7 +196,7 @@ Jeder sollte der Kommunikation folgen können.
 #+end_notes
 ** Statistiken
 [[./fig/permissions_overview.png]]
-#+revelal: split
+#+reveal: split
 Ganze 859 Organisationen lieben anscheinend opensource ;P
 * wie war der prozess des disclosures
 ** Was ist ein disclosure prozess
