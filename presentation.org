@@ -279,7 +279,7 @@ w1ntermute
 ** Sorgt für eine security txt
 ** Ein ansprechpartner:in reicht
 ** Schulen der Mitarbeitenden
-** Offboaridng aus githuborgas
+** Offboarding aus githuborgas
 ** PATs müssen ablaufen
 * was sind unsere tipps
 ** Sucht euch ein Team. Alleine macht anschreiben keinen Spaß
@@ -302,7 +302,7 @@ w1ntermute
 ** Firmen müssen mehr in die Verantwortung gezogen werden.
 - Dockerhub muss hier besser werden
 - Firmen müssen ihre Entwickler:innen besser Schulen
-- Schreibt keine Blogs mit falschem credentials händling
+- Schreibt keine Blogs mit falschem credentials handling
 #+begin_notes
 Die ganzen LLMs veteilen dieses falsche wissen.
 #+end_notes
