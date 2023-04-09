@@ -171,10 +171,12 @@ Mehr Secrets als gedacht:
 Hol dir Leute, denen du vertraust:
 - Relativ früh dazu entschieden zwei personen zu Involvieren.
 - Früh einen Prozess etabliert wie wir uns Aufteilen.
+- Prozesse Dokumentieren und Kommunikation einhalten
 #+end_notes
 ** Tools
 - SQL Datenbank mit den Scan Results
 - Dokumente hinterlegt bei cryptpad
+- Eigenes tool um schnell Github-Permissions zu überprüfen
 #+begin_notes
 - Datenbank:
 Hier haben wir sowohl die Namen der Images und deren Tags gespeichert
