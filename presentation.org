@@ -24,12 +24,11 @@ CMD python /app/app.py
 - Diese werden zur Buildzeit ausgeführt
 - Docker speichert diese mit, um zu zeigen wie ein image gebaut wird.
 #+reveal: split
-#+CAPTION: Beispiel von Docker layern auf der Website
-#+name: fig:docke-1
 #+ATTR_HTML: :style height:65vh
 [[./fig/docker_layer_example.png]]
-#begin_notes
-w1ntermute
+#+begin_notes
+    w1ntermute
+    Hier zeigen wie das in docerhub aussieht. Das häkchen zeigt aber nur, das keine CVEs gefunden wurden.
 #+end_notes
 
 * wie kommen credentials in docker
