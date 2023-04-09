@@ -276,6 +276,13 @@ w1ntermute
 ** Fang den vortrag nicht eine woche vor vortrag an.
 ** Lass dich überreden einen Vortrag zu halten
 ** Übrigens das waren nur dockerhub. Das gleiche gilt natürlich für alle archive.
+- quay.io
+- github
+- amazon ecr
+- you name it
+#+begin_notes
+w1ntermute
+#+end_notes
 * schlusswort
 ** Viel spaß beim bug bounty
 ** Firmen müssen mehr in die Verantwortung gezogen werden.
