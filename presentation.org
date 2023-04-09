@@ -189,7 +189,7 @@ Kontaktpersonen / Zuständiger für eine Org
 #+end_notes
 ** Eigene domain für gemeinsame kommunikation
 - Name ist Programm -> Brokentoken
-- One Face to the Customer
+- One Face to the Company
 #+ATTR_HTML: :style height:40vh
 [[./fig/brokentoken.png]]
 #+begin_notes
