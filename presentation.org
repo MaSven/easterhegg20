@@ -220,6 +220,7 @@ Read auf Private Repos kann auch von Interesse sein.
 - E-Mails von Committern (oft leider einfach gmail.com)
 #+reveal: split
 - Das internet
+#+reveal: split
   [[./fig/sucher_nach_firma_im_netz.jpg]]
 ** Herausfinden disclosure process
 - Meistens eher irgend eine email adresse finden
